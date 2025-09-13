@@ -1,0 +1,75 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        //---------------------------------------------------------------------
+        // Standard debug build via Crtl-Shift-B
+		// by tomschrot
+        {
+            "label": "build",
+            "type": "process",
+            "command": "dotnet",
+            "args":
+            [
+                "build",
+                "${workspaceFolder}/SimpleUnions.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+
+            "problemMatcher": "$msCompile",
+
+            "group":
+            {
+                "kind": "build",
+                "isDefault": true
+            },
+
+            "presentation":
+            {
+                "echo": false,
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        //---------------------------------------------------------------------
+        // by tomschrot
+        {
+            "label": "PUBLISH",
+            "command": "dotnet",
+            "type": "process",
+            "args":
+            [
+                "publish",
+                "${workspaceFolder}/SimpleUnions.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary",
+                "-c:Release",
+                //"-r:win-x64",
+                //"-p:PublishSingleFile=true",
+                //"-p:PublishTrimmed=true",
+                //"-p:TrimMode=link",
+                // "-p:PublishReadyToRun=true", //native!
+                //"-o:Y:/SERVICES/.tools"
+                "-o:${workspaceFolder}/bin/publish"
+            ],
+
+            "problemMatcher": "$msCompile",
+
+            "presentation":
+            {
+                "echo": false,
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": true,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        }
+        //---------------------------------------------------------------------
+    ]
+}

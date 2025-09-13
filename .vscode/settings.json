@@ -1,0 +1,15 @@
+{
+    "files.exclude":
+    {
+        "**/bin": true,
+        "**/obj": true,
+        ".vscode": true
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "csharp.format.enable": false
+}
